@@ -63,7 +63,7 @@ function AddTemplate(props) {
           formData.append('deadline', deadline);
 
           setErrorMsg('');
-          await axios.post('http://localhost:4000/upload/template', formData, {
+          await axios.post('https://af-group-project.herokuapp.com/upload/template', formData, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }

@@ -21,7 +21,7 @@ const TemplateList = () => {
     useEffect(() => {
         const getFilesList = async () => {
             try {
-                const { data } = await axios.get('http://localhost:4000/api/v1/templates/');
+                const { data } = await axios.get('https://af-group-project.herokuapp.com/api/v1/templates/');
                 setErrorMsg('');
                 setFilesList(data);
             } catch (error) {
@@ -34,7 +34,7 @@ const TemplateList = () => {
 
     const downloadFile = async (id, path, mimetype) => {
         try {
-            const result = await axios.get(`http://localhost:4000/download/template/${id}`, {
+            const result = await axios.get(`https://af-group-project.herokuapp.com/download/template/${id}`, {
                 responseType: 'blob'
             });
             const split = path.split('/');

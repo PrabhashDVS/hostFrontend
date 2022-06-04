@@ -85,7 +85,7 @@ function AddTopic(props) {
           formData.append('status', status);
 
           setErrorMsg('');
-          await axios.post('http://localhost:4000/upload', formData, {
+          await axios.post('https://af-group-project.herokuapp.com/upload', formData, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }

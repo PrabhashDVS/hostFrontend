@@ -27,7 +27,7 @@ function ViewTopic(props) {
 
     const downloadFile = async (id, path, mimetype) => {
         try {
-            const result = await axios.get(`http://localhost:4000/download/${id}`, {
+            const result = await axios.get(`https://af-group-project.herokuapp.com/download/${id}`, {
                 responseType: 'blob'
             });
             const split = path.split('/');

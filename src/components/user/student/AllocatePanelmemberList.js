@@ -18,7 +18,7 @@ const AllocatePanelmemberList = () => {
   useEffect(() => {
     const getFilesList = async () => {
       try {
-        const { data } = await axios.get('http://localhost:4000/getAllAllocatedPnlMembers');
+        const { data } = await axios.get('https://af-group-project.herokuapp.com/getAllAllocatedPnlMembers');
         setErrorMsg('');
         setFilesList(data);
       } catch (error) {
@@ -31,7 +31,7 @@ const AllocatePanelmemberList = () => {
 
   const downloadFile = async (id, path, mimetype) => {
     try {
-      const result = await axios.get(`http://localhost:4000/download/allocatedPanelMembers/${id}`, {
+      const result = await axios.get(`https://af-group-project.herokuapp.com/download/allocatedPanelMembers/${id}`, {
         responseType: 'blob'
       });
       const split = path.split('/');

@@ -29,7 +29,7 @@ function AddSubmission() {
     useEffect(() => {
 
         axios
-            .get("http://localhost:4000/api/v1/templates/" + templateId)
+            .get("https://af-group-project.herokuapp.com/api/v1/templates/" + templateId)
             .then((res) => {
                 setTemplateName(res.data.templateName);
                 setDeadline(res.data.deadline);
@@ -91,7 +91,7 @@ function AddSubmission() {
                     formData.append('groupID', groupID);
 
                     setErrorMsg('');
-                    await axios.post('http://localhost:4000/upload/submission', formData, {
+                    await axios.post('https://af-group-project.herokuapp.com/upload/submission', formData, {
                         headers: {
                             'Content-Type': 'multipart/form-data'
                         }

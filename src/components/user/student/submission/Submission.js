@@ -13,7 +13,7 @@ function Submission(props) {
 
     const downloadFile = async (id, path, mimetype) => {
         try {
-            const result = await axios.get(`http://localhost:4000/download/submission/${id}`, {
+            const result = await axios.get(`https://af-group-project.herokuapp.com/download/submission/${id}`, {
                 responseType: 'blob'
             });
             const split = path.split('/');
@@ -37,7 +37,7 @@ function Submission(props) {
     // }, []);
     // useEffect(() => {
     //     axios
-    //         .get("http://localhost:4000//api/v1/submissions/getSubmissionsUsingGroupID/" + user.groupID)
+    //         .get("https://af-group-project.herokuapp.com//api/v1/submissions/getSubmissionsUsingGroupID/" + user.groupID)
     //         .then((res) => {
     //             setSubmissionList(res.data);
     //         })

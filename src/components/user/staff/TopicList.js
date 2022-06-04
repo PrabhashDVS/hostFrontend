@@ -18,7 +18,7 @@ const TopicList = () => {
   useEffect(() => {
     const getFilesList = async () => {
       try {
-        const { data } = await axios.get('http://localhost:4000/api/v1/topics/');
+        const { data } = await axios.get('https://af-group-project.herokuapp.com/api/v1/topics/');
         setErrorMsg('');
         setFilesList(data);
       } catch (error) {
@@ -31,7 +31,7 @@ const TopicList = () => {
 
   const downloadFile = async (id, path, mimetype) => {
     try {
-      const result = await axios.get(`http://localhost:4000/download/${id}`, {
+      const result = await axios.get(`https://af-group-project.herokuapp.com/download/${id}`, {
         responseType: 'blob'
       });
       const split = path.split('/');
@@ -55,7 +55,7 @@ const TopicList = () => {
         status: "Accepted"
       };
 
-      await axios.patch(`http://localhost:4000/changeStatus/${id}`, requestBody);
+      await axios.patch(`https://af-group-project.herokuapp.com/changeStatus/${id}`, requestBody);
       alert("Topic status is changed to Accepted");
       window.location = "/list"
 
@@ -70,7 +70,7 @@ const TopicList = () => {
         status: "Rejected"
       };
 
-      await axios.patch(`http://localhost:4000/changeStatus/${id}`, requestBody);
+      await axios.patch(`https://af-group-project.herokuapp.com/changeStatus/${id}`, requestBody);
       alert("Topic status is changed to Rejected");
       window.location = "/list"
 

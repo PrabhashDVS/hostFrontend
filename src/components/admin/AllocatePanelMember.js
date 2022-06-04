@@ -62,7 +62,7 @@ function AllocatePanelMember(props) {
           formData.append('allocatepnl_description', allocatepnl_description);
 
           setErrorMsg('');
-          await axios.post('http://localhost:4000/upload/allocatedpanelmembers', formData, {
+          await axios.post('https://af-group-project.herokuapp.com/upload/allocatedpanelmembers', formData, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }
